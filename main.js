@@ -31,17 +31,20 @@ let data = [
     }
   ];
 
-// 覆蓋套票、篩選器
+//  覆蓋套票、篩選器
+
 const ticketCard = document.querySelector(".ticketCard-area");
 const regionSearch = document.querySelector(".regionSearch");
 const searchResultText = document.querySelector("#searchResult-text");
 
 // 查無資料頁面
+
 const cantFindarea = document.querySelector(".cantFind-area");
+
 // 必填隱藏
-const circle = document.querySelector(".fa-exclamation-circle");
 
 // 新增套票
+
 const ticketName = document.querySelector("#ticketName");
 const ticketImgUrl = document.querySelector("#ticketImgUrl");
 const ticketRegion = document.querySelector("#ticketRegion");
@@ -51,7 +54,7 @@ const ticketRate = document.querySelector("#ticketRate");
 const ticketDescription = document.querySelector("#ticketDescription");
 const addTicketButton = document.querySelector(".addTicket-btn");
 const ticketForm = document.querySelector(".addTicket-form");
-// 表單
+
 
   function init(data) {
     let str = "";
@@ -92,42 +95,43 @@ const ticketForm = document.querySelector(".addTicket-form");
     ticketCard.innerHTML = str;
     searchResultText.textContent = `本次搜尋共 ${data.length} 筆資料`;
   }
-  //覆蓋套票
+  // 覆蓋套票
   
   init(data);
   
-  //篩選地區
+  // 篩選地區
+
   regionSearch.addEventListener("change", addTicket);
   
   function addTicket() {
     let newData = [];
     data.forEach(function (element) {
-      if (regionSearch.value === element.area) {
+      if (regionSearch.value == element.area) {
         cantFindarea.style.display = "block";
         newData.push(element);
         rendering(newData);
-      } else if (regionSearch.value === "") {
+      } else if (regionSearch.value == "") {
         init(data);
       }
     });
   }
   
-  //新增套票
+  // 新增套票
   
   addTicketButton.addEventListener("click", function (e) {
-    if (ticketName.value === "") {
+    if (ticketName.value == "") {
       return;
-    } else if (ticketImgUrl.value === "") {
+    } else if (ticketImgUrl.value == "") {
       return;
-    } else if (ticketRegion.value === "") {
+    } else if (ticketRegion.value == "") {
       return;
-    } else if (ticketPrice.value === "") {
+    } else if (ticketPrice.value == "") {
       return;
-    } else if (ticketNum.value === "") {
+    } else if (ticketNum.value == "") {
       return;
-    } else if (ticketRate.value === "") {
+    } else if (ticketRate.value == "") {
       return;
-    } else if (ticketDescription.value === "") {
+    } else if (ticketDescription.value == "") {
       return;
     } else {
       alert("新增成功！");
