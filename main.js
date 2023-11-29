@@ -109,7 +109,7 @@ const ticketForm = document.querySelector(".addTicket-form");
       if (regionSearch.value == element.area) {
         cantFindarea.style.display = "block";
         newData.push(element);
-        rendering(newData);
+        init(newData);
       } else if (regionSearch.value == "") {
         init(data);
       }
