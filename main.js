@@ -101,9 +101,9 @@ const ticketForm = document.querySelector(".addTicket-form");
   
   // 篩選地區
 
-  regionSearch.addEventListener("change", addTicket);
+  regionSearch.addEventListener("change", selectRegion);
   
-  function addTicket() {
+  function selectRegion() {
     let newData = [];
     data.forEach(function (element) {
       if (regionSearch.value == element.area) {
